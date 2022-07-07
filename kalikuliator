@@ -1,0 +1,61 @@
+#print('Калькурятор2',end ='\n')
+
+
+
+
+operation = input('Введите операцию: ')
+N = int(input('Сколько операндов? '))
+print('')
+ 
+string = ''
+result = 0
+rresult = 1
+if operation == '+':
+  for x in range(1, N + 1):
+    n = float(input('Введите операнд ' + str(x) + ': '))
+    if x == N:
+      string += str(n)
+      result += n
+      break
+    string += str(n) + ' + '
+    result += n
+  print('\n', string, '=', result)
+elif operation == '-':
+  for x in range(1, N + 1):
+    n = float(input('Введите операнд ' + str(x) + ': '))
+    if x == 1:
+      raz = n
+      string += str(n) + ' - '
+    elif x != 1:
+      raz -= n
+      if x == N:
+        string += str(n)
+        break
+      string += str(n) + ' - '
+  print('\n', string, '=', raz)
+elif operation == '/':
+  for x in range(1, N + 1):
+   n =float(input('Введите операнд ' + str(x) + ': '))
+   if x == 1:
+      raz = n
+      string += str(n) + ' : '
+   elif x != 1:
+    raz /= n
+    if x == N:
+      string += str(n)
+      break
+    string += str(n) + ' : '
+  print('\n', string, '=', raz)
+elif operation == '*':
+  for x in range(1, N + 1):
+   n = float(input('Введите операнд ' + str(x) + ': '))
+   if x == N:
+      string += str(n)
+      rresult *= n
+      break
+   string += str(n) + ' * '
+   rresult *= n 
+  print('\n', string, '=', rresult)
+else:
+  print('Ошибка: такой операции не существует. Попробуйте ещё раз.')
+
